@@ -20,3 +20,58 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
+/*Área dos cursos*/
+
+.cursos{
+    width: 100%;
+    height: auto;
+    background-color: var(--cor3);
+    padding-top: 20px;
+}
+
+.cursos h1{
+    text-align: center;
+}
+
+.curso-main {
+    max-width: 1000px;
+    margin: auto;
+}
+  
+  .curso-row {
+    margin: 8px -16px;
+  }
+  
+  .curso-row,
+  .curso-row > .curso-column {
+    padding: 8px;
+  }
+  
+  .curso-column {
+    float: left;
+    width: 25%;
+  }
+  
+  .curso-row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .curso-content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .curso-column {
+      width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .curso-column {
+      width: 100%;
+    }
+  }
