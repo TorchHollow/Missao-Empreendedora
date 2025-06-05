@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Sources/logoProvisoria.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/pagina.css">
+    <title>Usuario</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="profile">
+            <div class="avatar"></div>
+            <div class="user-info">
+                <h2>John Doe</h2>
+                <p>johndoe@example.com</p>
+                <button class="badge">Empreendedor Iniciante</button>
+                <span class="alterar-foto">Alterar Foto</span>
+            </div>
+            <div class="notification"></div>
+        </div>
+
+
+        <div class="stats">
+            <div>
+                <p>Pedidos</p>
+                <span>5</span>
+            </div>
+            <div>
+                <p>Cursos Favoritos</p>
+                <span>3</span>
+            </div>
+            <div>
+                <p>Total de Compras</p>
+                <span>9</span>
+            </div>
+            <div>
+                <p>Último Acesso</p>
+                <span>10/05/2025</span>
+            </div>
+        </div>
+
+
+        <div class="actions">
+            <button class="delete">Deletar Conta</button>
+            <button class="edit">Editar Perfil</button>
+            <button class="buy">Fazer nova compra</button>
+        </div>
+
+
+        <input type="text" class="search" placeholder="Buscar produtos ou pedidos...">
+
+
+        <h3>Histórico de Pedidos</h3>
+        <div id="historico"></div>
+
+
+        <h3>Cursos Favoritos</h3>
+        <div id="favoritos"></div>
+
+
+        <button class="back-button">Voltar</button>
+    </div>
+
+    <script src="../Scripts/usuario.js"></script>
+</body>
+
+</html>
