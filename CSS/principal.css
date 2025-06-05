@@ -20,3 +20,528 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
+  /*---------------------- Menubar e Header --------------------------*/
+
+.menubarHeader{
+    background-color: #fff;
+}
+
+  /* Cabeçalho */
+  .cabecalho {
+    background-color: #FFEA00;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+ 
+ 
+  .logo-e-nome {
+    display: flex;
+    align-items: center;
+  }
+ 
+ 
+  #logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+ 
+ 
+  .cabecalho p {
+    font-weight: bold;
+    font-size: 20px;
+  }
+ 
+ 
+  /* Navegação */
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+ 
+ 
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+ 
+ 
+  .menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+ 
+ 
+  .menu ul li a:hover {
+    background-color: #7e7e7b;
+    color: #fff;
+  }
+ 
+ 
+  /* Botões */
+  .botoes button {
+    background-color: #f1da0a;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    font-family: serif;
+  }
+ 
+ 
+  .botoes button:hover {
+    background-color: #7e7e7b;
+    color: #fff;
+  }
+ 
+ 
+  /* Seção principal */
+  .nav-inic {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+ 
+ 
+  .nav-inic .texto {
+    max-width: 600px;
+  }
+ 
+ 
+  .nav-inic h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+ 
+ 
+  .nav-inic p {
+    font-size: 16px;
+    color: #444;
+  }
+ 
+ 
+  #MulherTerno {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    float:left;
+  }
+  @media (max-width: 768px) {
+    .cabecalho {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      gap: 20px;
+    }
+ 
+    .logo-e-nome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+ 
+    .logo-e-nome img {
+      max-width: 120px;
+      height: auto;
+    }
+ 
+    .menu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+ 
+    .menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      width: 100%;
+    }
+ 
+    .menu ul li {
+      width: 100%;
+    }
+ 
+    .menu ul li a {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+    }
+ 
+    .botoes {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+ 
+    .botoes button {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+ 
+  @media (max-width: 480px) {
+    .cabecalho {
+      padding: 15px;
+    }
+ 
+    .cabecalho p {
+      font-size: 16px;
+    }
+ 
+    .botoes button {
+      font-size: 15px;
+    }
+ 
+    .menu ul li a {
+      padding: 8px 0;
+      font-size: 14px;
+      background-color: #FFEA00;
+    }
+ 
+    .nav-inic h2 {
+      font-size: 20px;
+    }
+ 
+    .nav-inic p {
+      font-size: 13px;
+    }
+  }
+ /* Botão menu escondido no desktop */
+.btn-menu {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-inic{
+    display: wrap;
+}
+
+/* No mobile: mostra botão, esconde menu */
+@media (max-width: 768px) {
+  .btn-menu {
+    display: block;
+  }
+ 
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: #FFEA00;
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+  }
+ 
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+
+
+
+  .menu ul li a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    padding: 10px 0;
+  }
+
+
+
+
+  /* Opcional: fechar menu ao clicar em link */
+  .menu ul li a:hover {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+ 
+  /* Ajusta botoes para mobile */
+  .botoes {
+    display: none; /* ou pode colocar dentro do menu, se preferir */
+  }
+}
+ 
+
+
+ 
+  /* Estado inicial invisível para itens do menu e botoes */
+    .menu ul li,
+    .botoes button {
+    opacity: 0;
+     transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+
+    /* Classe que ativa o fade-in */
+    .menu.active ul li,
+    .menu.active .botoes button {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+      /*---------------------- Sobre --------------------------*/
+
+.sobre{
+    background-color: #FFFFED;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.hero {
+    background-color: #FFEA00;
+    color: rgb(0, 0, 0);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+
+
+.hero h1 {
+    font-size: 3em;
+    margin: 20px 0 10px 0;
+}
+
+
+
+
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+
+
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+
+
+
+.section-image {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+
+
+.sobre section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+
+.sobre section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #FFBF00;
+    border-bottom: 3px solid #FFBF00;
+    padding-bottom: 5px;
+}
+
+
+
+
+.sobre section p, .sobre section ul {
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+
+
+.sobre ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sobre ul li {
+    background: #FFEE8C;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    color: #333;
+}
+
+.footer {
+    background-color: #FFBF00;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+      /*---------------------- Cursos --------------------------*/
+
+      .cursos{
+        width: 100%;
+        height: auto;
+        background-color: #FFD700;
+        padding-top: 20px;
+    }
+    
+    .cursos h1{
+        text-align: center;
+    }
+    
+    .curso-main {
+        max-width: 1000px;
+        margin: auto;
+    }
+      
+      .curso-row {
+        margin: 8px -16px;
+      }
+      
+      .curso-row,
+      .curso-row > .curso-column {
+        padding: 8px;
+      }
+      
+      .curso-column {
+        float: left;
+        width: 25%;
+      }
+      
+      .curso-row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .curso-content {
+        background-color: white;
+        padding: 10px;
+        border-radius: 20px;
+      }
+    
+      .curso-content img {
+        border-radius: 10px;
+      }
+    
+      .curso-button {
+        border-radius: 4px;
+        background-color: #FFBF00;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 18px;
+        padding: 12px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 10px;
+      }
+      
+      .curso-button a {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      
+      .curso-button a:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      .curso-button:hover a {
+        padding-right: 25px;
+      }
+      
+      .curso-button:hover a:after {
+        opacity: 1;
+        right: 0;
+      }
+    
+      #mais{
+        display: none;
+      }
+    
+      #meuBotao{
+        border: none;
+        background-color: inherit;
+        padding: 14px 14px;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bolder;
+      }
+      
+      @media screen and (max-width: 900px) {
+        .curso-column {
+          width: 50%;
+        }
+      }
+      
+      @media screen and (max-width: 600px) {
+        .curso-column {
+          width: 100%;
+        }
+      }
