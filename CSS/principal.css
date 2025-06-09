@@ -21,298 +21,178 @@
     font-family: "Roboto", sans-serif;
 }
 
-  /*---------------------- Menubar e Header --------------------------*/
+  /*---------------------- Menubar  --------------------------*/
 
-.menubarHeader{
-    background-color: #fff;
-}
-
-  /* Cabeçalho */
-  .cabecalho {
-    background-color: #FFEA00;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
   }
- 
- 
-  .logo-e-nome {
-    display: flex;
-    align-items: center;
-  }
- 
- 
-  #logo {
-    height: 50px;
-    margin-right: 10px;
-  }
- 
- 
-  .cabecalho p {
-    font-weight: bold;
-    font-size: 20px;
-  }
- 
- 
-  /* Navegação */
-  .menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
- 
- 
-  .menu ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
- 
- 
-  .menu ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    background-color: transparent;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
- 
- 
-  .menu ul li a:hover {
-    background-color: #7e7e7b;
-    color: #fff;
-  }
- 
- 
-  /* Botões */
-  .botoes button {
-    background-color: #f1da0a;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
-    font-family: serif;
-  }
- 
- 
-  .botoes button:hover {
-    background-color: #7e7e7b;
-    color: #fff;
-  }
- 
- 
-  /* Seção principal */
-  .nav-inic {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-  }
- 
- 
-  .nav-inic .texto {
-    max-width: 600px;
-  }
- 
- 
-  .nav-inic h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
- 
- 
-  .nav-inic p {
-    font-size: 16px;
-    color: #444;
-  }
- 
- 
-  #MulherTerno {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-    float:left;
-  }
-  @media (max-width: 768px) {
-    .cabecalho {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      gap: 20px;
-    }
- 
-    .logo-e-nome {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
- 
-    .logo-e-nome img {
-      max-width: 120px;
-      height: auto;
-    }
- 
-    .menu {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
- 
-    .menu ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      width: 100%;
-    }
- 
-    .menu ul li {
-      width: 100%;
-    }
- 
-    .menu ul li a {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      text-align: center;
-    }
- 
-    .botoes {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
- 
-    .botoes button {
-      width: 90%;
-      max-width: 300px;
-    }
-  }
- 
-  @media (max-width: 480px) {
-    .cabecalho {
-      padding: 15px;
-    }
- 
-    .cabecalho p {
-      font-size: 16px;
-    }
- 
-    .botoes button {
-      font-size: 15px;
-    }
- 
-    .menu ul li a {
-      padding: 8px 0;
-      font-size: 14px;
-      background-color: #FFEA00;
-    }
- 
-    .nav-inic h2 {
-      font-size: 20px;
-    }
- 
-    .nav-inic p {
-      font-size: 13px;
-    }
-  }
- /* Botão menu escondido no desktop */
-.btn-menu {
-  display: none;
-  font-size: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.nav-inic{
-    display: wrap;
-}
-
-/* No mobile: mostra botão, esconde menu */
-@media (max-width: 768px) {
-  .btn-menu {
+  
+  .topnav a {
+    float: left;
     display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
   }
- 
-  .menu {
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .topnav .icon {
     display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 75%;
-    height: 100vh;
-    background-color: #FFEA00;
-    padding: 40px 20px;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 1000;
-    overflow-y: auto;
-    box-shadow: -3px 0 8px rgba(0,0,0,0.2);
   }
- 
-  .menu ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-
-
-
-  .menu ul li a {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    padding: 10px 0;
-  }
-
-
-
-
-  /* Opcional: fechar menu ao clicar em link */
-  .menu ul li a:hover {
-    background-color: #fff;
-    border-radius: 5px;
-  }
- 
-  /* Ajusta botoes para mobile */
-  .botoes {
-    display: none; /* ou pode colocar dentro do menu, se preferir */
-  }
-}
- 
-
-
- 
-  /* Estado inicial invisível para itens do menu e botoes */
-    .menu ul li,
-    .botoes button {
-    opacity: 0;
-     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
     }
-
-
-    /* Classe que ativa o fade-in */
-    .menu.active ul li,
-    .menu.active .botoes button {
-    opacity: 1;
-    transform: translateY(0);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
     }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+      /*---------------------- Login e Cadastro --------------------------*/
+
+      .loginInput[type=text], .loginInput[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      
+      /* Set a style for all buttons */
+      .loginButton {
+        background-color: #FFBF00;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .loginButton:hover {
+        opacity: 0.8;
+      }
+      
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+      
+      /* Center the image and position the close button */
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+      }
+      
+      img.avatar {
+        width: 20%;
+        border-radius: 15%;
+      }
+      
+      .loginContainer {
+        padding: 16px;
+      }
+      
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+      
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #FFFFED;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button (x) */
+      .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+      
+      /* Add Zoom Animation */
+      .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+      }
+      
+      @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+      }
+        
+      @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+      }
+      
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+      }
 
       /*---------------------- Sobre --------------------------*/
 
@@ -471,6 +351,7 @@
         background-color: white;
         padding: 10px;
         border-radius: 20px;
+        text-align: center;
       }
     
       .curso-content img {
@@ -545,3 +426,94 @@
           width: 100%;
         }
       }
+
+      /*---------------------- Formulario --------------------------*/
+
+      .jornal{
+        background-color:#FFFFED;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .jornal-form {
+        border: 4px solid #FFFF00;
+      }
+      
+      .jornal-container {
+        padding: 18px;;
+        background-color: #FFFF00;
+      }
+      
+      .jornal-input[type=text], .jornal-input[type=submit] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 15px;
+      }
+      
+      .jornal-input[type=submit] {
+        background-color: #FFC000;
+        color: black;
+        border: none;
+      }
+      
+      .jornal-input[type=submit]:hover {
+        opacity: 0.8;
+      }
+
+            /*---------------------- Rodapé --------------------------*/
+           
+            footer {
+              display: flex;
+              justify-content: space-between;
+              background-color: #FFBF00;
+              color: black;
+              padding: 10px;
+              flex-wrap: wrap;
+            }
+            
+            .footer-left a {
+              color: black;
+              text-decoration: none;
+            }
+            
+            .footer-left p {
+              margin: 5px 0;
+            }
+            
+            .footer-right {
+              max-width: 300px;
+            }
+            
+            .footer-right h4 {
+              margin-bottom: 10px;
+            }
+            
+            .social-icons {
+              margin-top: 10px;
+            }
+            
+            .social-icons a {
+              color: black;
+              font-size: 24px;
+              margin-right: 10px;
+              text-decoration: none;
+            }
+            
+            @media (max-width: 768px) {
+              footer {
+                flex-direction: column;
+                text-align: center;
+              }
+            
+              .footer-right {
+                margin-top: 20px;
+              }
+            }

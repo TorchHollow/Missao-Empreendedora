@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
-   
-    // adiciona a classe que ativa a transição
-    setTimeout(() => {
-      menu.classList.add('active');
-    }, 200); // delay de 200ms para suavizar
-  });
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}

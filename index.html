@@ -1,3 +1,8 @@
+<!-- <button onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">Login</button>
+                    <button onclick="document.getElementById('id02').style.display='block'"
+                        style="width:auto;">Cadastro</button> -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,43 +12,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./Sources/logoProvisoria.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Missão Empreendedora</title>
 </head>
 
 <body>
 
-    <!---------------------------Menubar e Header----------------------------------------------->
+    <!---------------------------Menubar----------------------------------------------->
 
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="split">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></a>
+        <a><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Cadastro</button></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
 
-    <div class="menubarHeader">
-        <header class="cabecalho">
-            <div class="logo-e-nome">
-                <img id="logo" src="./Sources/logoProvisoria.png" alt="Logo Missão" />
-                <p>Missão Empreendedora</p>
+    <!---------------------------Login----------------------------------------------->
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="./Sources/logoProvisoria.png" alt="Avatar" class="avatar">
+                <h1>Login</h1>
             </div>
 
-            <nav class="menu">
-                <ul>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Mais</a></li>
-                    <li><a href="#">Contatos</a></li>
-                </ul>
-                <div class="botoes">
-                    <button>Login</button>
-                    <button>Cadastro</button>
-                </div>
-            </nav>
-        </header>
+            <div class="loginContainer">
+                <label for="uname"><b>E-mail</b></label>
+                <input class="loginInput" type="text" placeholder="Insira E-mail" name="uname" required>
 
-        <section class="nav-inic">
-            <div class="texto">
-                <h2>Se torne um especialista na arte do empreendedorismo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod vitae non diam ipsum, augue amet
-                    amet. At nisl amet consectetur tincidunt pellentesque.</p>
+                <label for="psw"><b>Senha</b></label>
+                <input class="loginInput" type="password" placeholder="Insira Senha" name="psw" required>
+
+                <button class="loginButton" type="submit">Login</button>
             </div>
-            <img id="MulherTerno" src="./Sources/mulherTerno.png" alt="Mulher de terno" />
-        </section>
+
+            <div class="loginContainer" style="background-color:#FFEE8C">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!---------------------------Cadastro----------------------------------------------->
+
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="./Sources/logoProvisoria.png" alt="Avatar" class="avatar">
+                <h1>Cadastro</h1>
+            </div>
+
+            <div class="loginContainer">
+                <label for="uname"><b>Coloque um e-mail</b></label>
+                <input class="loginInput" type="text" placeholder="Insira E-mail" name="uname" required>
+
+                <label for="psw"><b>Crie uma senha</b></label>
+                <input class="loginInput" type="password" placeholder="Insira Senha" name="psw" required>
+
+                <label for="repsw"><b>Repita a senha</b></label>
+                <input class="loginInput" type="password" placeholder="Reinsira Senha" name="repsw" required>
+
+                <button class="loginButton" type="submit">Cadastrar</button>
+            </div>
+
+            <div class="loginContainer" style="background-color:#FFEE8C">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+            </div>
+        </form>
     </div>
 
     <!------------------------------------------Sobre----------------------------------------------->
@@ -135,7 +183,7 @@
 
         <div class="curso-main">
 
-            <div class="curso-row">
+            <div class="curso-row fade-in">
 
                 <div class="curso-column">
                     <div class="curso-content">
@@ -220,6 +268,54 @@
         </div>
     </section>
 
+    <!------------------------------Formulario----------------------------------------------->
+
+
+    <section class="jornal">
+
+        <form class="jornal-form" action="...">
+            <div class="jornal-container">
+                <h2>Receba novidades em seu E-Mail</h2>
+            </div>
+
+            <div class="jornal-container fade-in" style="background-color:white;">
+                <input class="jornal-input" type="text" placeholder="Nome" name="name" required>
+                <input class="jornal-input" type="text" placeholder="Email" name="mail" required>
+            </div>
+
+            <div class="jornal-container fade-in">
+                <input class="jornal-input" type="submit" value="Subscribe">
+            </div>
+        </form>
+
+    </section>
+
+    <!------------------------------Rodapé----------------------------------------------->
+
+    <footer id="contato">
+        <div class="footer-left fade-in">
+            <p>&copy; 2025 Missão Empreendedora. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-right fade-in">
+            <h4>Contato</h4>
+            <p>Email: example@mail.com</p>
+            <p>Tel: (00) 99999-9999 / (00) 99999-9999</p>
+            <div class="social-icons">
+                <a href="..." target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="..." target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="...." target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./Scripts/login.js"></script>
+    <script src="./Scripts/cadastro.js"></script>
     <script src="./Scripts/menubar.js"></script>
     <script src="./Scripts/sobre.js"></script>
     <script src="./Scripts/botao.js"></script>
