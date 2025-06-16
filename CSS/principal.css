@@ -143,7 +143,7 @@
 
       /*---------------------- Login e Cadastro --------------------------*/
 
-      .loginInput[type=text], .loginInput[type=password] {
+      .loginInput[type=text], .loginInput[type=password], .loginInput[type=email] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
