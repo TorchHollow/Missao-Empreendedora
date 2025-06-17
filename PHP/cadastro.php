@@ -1,14 +1,14 @@
 <?php
 
 require_once "config.php";
-require_once "session.php";
+require_once "sessao.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
-    $fullname = trim($_POST['name']);
+    $fullname = trim($_POST['uname']);
     $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST["confirm_password"]);
+    $password = trim($_POST['psw']);
+    $confirm_password = trim($_POST["repsw"]);
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
     if($query = $db->prepare("SELECT * FROM users WHERE email = ?")) {
