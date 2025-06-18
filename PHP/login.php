@@ -1,46 +1,52 @@
-<?php
+<?php session_start(); if (isset($_POST['login'])) { 
 
-require_once "config.php";
-require_once "session.php";
+// Connect to the database 
+$mysqli = new mysqli("localhost", "username", "password", "login_system"); 
 
+// Check for errors 
+if ($mysqli->connect_error) { die("Connection failed: " . $mysqli->connect_error); } 
 
-$error = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+// Prepare and bind the SQL statement 
+$stmt = $mysqli->prepare("SELECT id, password FROM users WHERE username = ?"); $stmt->bind_param("s", $username); 
 
-    $email = trim($_POST['email']);
-    $password = trim($_POST['psw']);
+// Get the form data 
+$username = $_POST['username']; $password = $_POST['password']; 
 
-    if (empty($email)) {
-        $error .= '<p class="error">Please enter email.</p>';
-    }
+// Execute the SQL statement 
+$stmt->execute(); $stmt->store_result(); 
 
-    if (empty($password)) {
-        $error .= '<p class="error">Please enter your password.</p>';
-    }
+// Check if the user exists 
+if ($stmt->num_rows > 0) { 
 
-    if (empty($error)) {
-        if($query = $db->prepare("SELECT * FROM users WHERE email = ?")) {
-            $query->bind_param('s', $email);
-            $query->execute();
-            $row = $query->fetch();
-            if ($row) {
-                if (password_verify($password, $row['password'])) {
-                    $_SESSION["userid"] = $row['id'];
-                    $_SESSION["user"] = $row;
+// Bind the result to variables 
+$stmt->bind_result($id, $hashed_password); 
 
-                    // Redirect the user to welcome page
-                    header("location: welcome.php");
-                    exit;
-                } else {
-                    $error .= '<p class="error">The password is not valid.</p>';
-                }
-            } else {
-                $error .= '<p class="error">No User exist with that email address.</p>';
-            }
-        }
-        $query->close();
-    }
-    // Close connection
-    mysqli_close($db);
-}
+// Fetch the result 
+$stmt->fetch(); 
+
+// Verify the password 
+if (password_verify($password, $hashed_password)) { 
+
+// Set the session variables 
+$_SESSION['loggedin'] = true; $_SESSION['id'] = $id; $_SESSION['username'] = $username; 
+
+// Redirect to the user's dashboard 
+echo "Seja bem-vindo!"; } else { echo "Senha incorreta!"; } } else { echo "Usuário não encontrado!"; } 
+
+// Close the connection 
+$stmt->close(); $mysqli->close(); }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <br>
+    <a href="../index.html">Voltar</a>
+</body>
+</html>
